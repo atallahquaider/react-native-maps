@@ -36,6 +36,7 @@
 @property (nonatomic, strong) NSMutableArray *polylines;
 @property (nonatomic, strong) NSMutableArray *circles;
 @property (nonatomic, strong) NSMutableArray *tiles;
+@property (nonatomic, strong) NSMutableArray *heatmaps;
 @property (nonatomic, strong) NSMutableArray *overlays;
 
 @property (nonatomic, assign) BOOL showsBuildings;
