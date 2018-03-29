@@ -29,9 +29,9 @@
 		628F81201FD16DF80058313A /* AIRMapLocalTile.m in Sources */ = {isa = PBXBuildFile; fileRef = 628F811F1FD16DF80058313A /* AIRMapLocalTile.m */; };
 		628F81231FD16EFA0058313A /* AIRMapLocalTileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 628F81221FD16EFA0058313A /* AIRMapLocalTileManager.m */; };
 		62AEC4D41FD5A0AA003225E0 /* AIRMapLocalTileOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 62AEC4D31FD5A0AA003225E0 /* AIRMapLocalTileOverlay.m */; };
-		964EFD69206D8CB800F98662 /* AIRGoogleMapHeatmap.m in Sources */ = {isa = PBXBuildFile; fileRef = 964EFD64206D883900F98662 /* AIRGoogleMapHeatmap.m */; };
 		964EFD6A206D8CBC00F98662 /* AIRGoogleMapHeatmapManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 964EFD67206D88DC00F98662 /* AIRGoogleMapHeatmapManager.m */; };
 		964EFD6D206D9E8F00F98662 /* RCTConvert+Heatmaps.m in Sources */ = {isa = PBXBuildFile; fileRef = 964EFD6C206D9E8F00F98662 /* RCTConvert+Heatmaps.m */; };
+		964EFD6E206DA41700F98662 /* AIRGoogleMapHeatmap.m in Sources */ = {isa = PBXBuildFile; fileRef = 964EFD64206D883900F98662 /* AIRGoogleMapHeatmap.m */; };
 		9B9498CA2017EFB800158761 /* AIRGoogleMapUrlTile.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B9498A62017EFB400158761 /* AIRGoogleMapUrlTile.m */; };
 		9B9498CB2017EFB800158761 /* AIRGoogleMapURLTileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B9498A72017EFB400158761 /* AIRGoogleMapURLTileManager.m */; };
 		9B9498CC2017EFB800158761 /* AIRGMSPolygon.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B9498A82017EFB400158761 /* AIRGMSPolygon.m */; };
@@ -351,6 +351,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				964EFD6E206DA41700F98662 /* AIRGoogleMapHeatmap.m in Sources */,
 				62AEC4D41FD5A0AA003225E0 /* AIRMapLocalTileOverlay.m in Sources */,
 				9B9498DC2017EFB800158761 /* AIRGoogleMapPolygonManager.m in Sources */,
 				1125B2E31C4AD3DA007D0023 /* AIRMapPolygon.m in Sources */,
@@ -367,7 +368,6 @@
 				9B9498CE2017EFB800158761 /* AIRGMSMarker.m in Sources */,
 				9B9498D72017EFB800158761 /* AIRGoogleMapManager.m in Sources */,
 				19DABC7F1E7C9D3C00F41150 /* RCTConvert+AirMap.m in Sources */,
-				964EFD69206D8CB800F98662 /* AIRGoogleMapHeatmap.m in Sources */,
 				1125B2E51C4AD3DA007D0023 /* AIRMapPolyline.m in Sources */,
 				9B9498D82017EFB800158761 /* DummyView.m in Sources */,
 				9B9498D52017EFB800158761 /* AIRGoogleMapPolyline.m in Sources */,
