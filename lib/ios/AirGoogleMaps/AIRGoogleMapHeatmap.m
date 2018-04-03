@@ -14,9 +14,6 @@
     if(_weightTileLayer != nil) {
         _weightTileLayer.map = nil;
         [self setMap:_map];
-    } else if(_densityTileLayer != nil) {
-        _densityTileLayer.map = nil;
-        [self setMap:_map];
     }
 }
 
@@ -55,31 +52,16 @@
 - (void)setMap:(AIRGoogleMap *)map {
     _map = map;
     if(map == nil) {
-        if(_weightTileLayer != nil) {
-            _weightTileLayer.map = nil;
-        } else if(_densityTileLayer != nil) {
-            _densityTileLayer.map = nil;
-        }
+        _weightTileLayer.map = nil;
     } else {
-        if([_heatmapMode isEqualToString: @"POINTS_DENSITY"]) {
-            GMUHeatmapTileLayer *tileLayer = [[GMUHeatmapTileLayer alloc] init];
-            tileLayer.weightedData = _points;
-            tileLayer.radius = _radius;
-            tileLayer.gradient = _gradient;
-            tileLayer.map = map;
-            _densityTileLayer = tileLayer;
-            _weightTileLayer = nil;
-        } else {
-            GMUWeightHeatmapTileLayer *tileLayer = [[GMUWeightHeatmapTileLayer alloc] init];
-            tileLayer.weightedData = _points;
-            tileLayer.radius = _radius;
-            tileLayer.staticMaxIntensity = _maxIntensity;
-            tileLayer.gradient = _gradient;
-            tileLayer.gradientSmoothing = _gradientSmoothing;
-            tileLayer.map = map;
-            _weightTileLayer = tileLayer;
-            _densityTileLayer = nil;
-        }
+        
+        GMUHeatmapTileLayer *tileLayer = [[GMUHeatmapTileLayer alloc] init];
+        tileLayer.weightedData = _points;
+        tileLayer.radius = _radius;
+        tileLayer.gradient = _gradient;
+        tileLayer.map = map;
+        _weightTileLayer = tileLayer;
+        
     }
 }
 
