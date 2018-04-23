@@ -536,7 +536,30 @@ public class AirMapView extends MapView implements GoogleMap.InfoWindowAdapter,
       AirMapUrlTile urlTileView = (AirMapUrlTile) child;
       urlTileView.addToMap(map);
       features.add(index, urlTileView);
-    } else if (child instanceof AirMapLocalTile) {
+    } else if (child instanceof AirMapHeatmap) {
+      final AirMapHeatmap heatmapView = (AirMapHeatmap) child;
+      heatmapView.addToMap(map);
+      features.add(index, heatmapView);
+      final TileOverlay heatmap = (TileOverlay) heatmapView.getFeature();
+
+      // deal with changing radius when camera zoom changes
+      final PolynomialSplineFunction radiusForZoomFunction = heatmapView.getRadiusForZoomFunction();
+      if (radiusForZoomFunction != null) {
+        lastUpdateZoom = map.getCameraPosition().zoom;
+        map.setOnCameraMoveListener(new GoogleMap.OnCameraMoveListener() {
+          @Override
+          public void onCameraMove() {
+            float currentZoom = map.getCameraPosition().zoom;
+            if (Math.abs(lastUpdateZoom - currentZoom) > 0.2) {
+              lastUpdateZoom = currentZoom;
+              double newRadius = radiusForZoomFunction.value(currentZoom);
+              heatmapView.getWeightBasedHeatmapTileProvider().setRadius((int) newRadius);
+              heatmap.clearTileCache();
+            }
+          }
+        });
+      }
+    }else if (child instanceof AirMapLocalTile) {
       AirMapLocalTile localTileView = (AirMapLocalTile) child;
       localTileView.addToMap(map);
       features.add(index, localTileView);
