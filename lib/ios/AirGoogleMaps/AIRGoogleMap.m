@@ -264,6 +264,16 @@ id regionAsJSON(MKCoordinateRegion region) {
     if (airPolygon.onPress) airPolygon.onPress(event);
 }
 
+- (void)didTapCircle:(GMSOverlay *)circle {
+    AIRGMSCircle *airCircle = (AIRGMSCircle *)circle;
+    
+    id event = @{@"action": @"circle-press",
+                 @"id": airCircle.identifier ?: @"unknown",
+                 };
+    
+    if (airCircle.onPress) airCircle.onPress(event);
+}
+
 - (void)didTapAtCoordinate:(CLLocationCoordinate2D)coordinate {
   if (!self.onPress) return;
   self.onPress([self eventFromCoordinate:coordinate]);
