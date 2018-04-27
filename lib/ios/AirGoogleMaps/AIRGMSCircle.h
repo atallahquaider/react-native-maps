@@ -9,9 +9,9 @@
 #import <GoogleMaps/GoogleMaps.h>
 #import <React/UIView+React.h>
 
-@class AIRGoogleMapPolygon;
+@class AIRGMSCircle;
 
-@interface AIRGMSPolygon : GMSPolygon
+@interface AIRGMSCircle : GMSCircle
 @property (nonatomic, strong) NSString *identifier;
 @property (nonatomic, copy) RCTBubblingEventBlock onPress;
 @end

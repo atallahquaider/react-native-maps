@@ -11,7 +11,9 @@
 
 @interface AIRGoogleMapCircle : UIView
 
-@property (nonatomic, strong) GMSCircle *circle;
+@property (nonatomic, weak) RCTBridge *bridge;
+@property (nonatomic, strong) NSString *identifier;
+@property (nonatomic, strong) AIRGMSCircle *circle;
 @property (nonatomic, assign) double radius;
 @property (nonatomic, assign) CLLocationCoordinate2D centerCoordinate;
 @property (nonatomic, copy) RCTBubblingEventBlock onPress;
